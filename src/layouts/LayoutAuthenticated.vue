@@ -7,11 +7,12 @@
     import { useMainStore } from "@/stores/main.js"
     import { useStyleStore } from "@/stores/style.js"
     import BaseIcon from "@/components/BaseIcon.vue"
-    import FormControl from "@/components/FormControl.vue"
     import NavBar from "@/components/NavBar.vue"
     import NavBarItemPlain from "@/components/NavBarItemPlain.vue"
     import AsideMenu from "@/components/AsideMenu.vue"
     import FooterBar from "@/components/FooterBar.vue"
+
+    import { CalendarIcon } from "@heroicons/vue/20/solid"
 
     useMainStore().setUser({
         name: "Martine Dublanc",
@@ -81,21 +82,23 @@
                         size="24"
                     />
                 </NavBarItemPlain>
+
                 <NavBarItemPlain
                     display="hidden lg:flex xl:hidden"
                     @click.prevent="isAsideLgActive = true"
                 >
                     <BaseIcon :path="mdiMenu" size="24" />
                 </NavBarItemPlain>
+
                 <NavBarItemPlain use-margin>
-                    <FormControl
-                        placeholder="Rechercher (ctrl+k)"
-                        ctrl-k-focus
-                        transparent
-                        borderless
+                    <CalendarIcon
+                        class="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-500"
+                        aria-hidden="true"
                     />
+                    Dimanche 26 mars 2023, 4h00
                 </NavBarItemPlain>
             </NavBar>
+
             <AsideMenu
                 :is-aside-mobile-expanded="isAsideMobileExpanded"
                 :is-aside-lg-active="isAsideLgActive"

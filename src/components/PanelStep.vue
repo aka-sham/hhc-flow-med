@@ -10,29 +10,7 @@
                 class="relative md:flex md:flex-1"
             >
                 <a
-                    v-if="step.status === 'complete'"
-                    :href="step.href"
-                    class="group flex w-full items-center"
-                >
-                    <span
-                        class="flex items-center px-6 py-4 text-sm font-medium"
-                    >
-                        <span
-                            class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 dark:bg-blue-500 group-hover:bg-blue-700 group-hover:dark:bg-blue-600"
-                        >
-                            <CheckIcon
-                                class="h-6 w-6 text-white"
-                                aria-hidden="true"
-                            />
-                        </span>
-                        <span class="ml-4 text-sm font-medium text-gray-900">{{
-                            step.name
-                        }}</span>
-                    </span>
-                </a>
-                <a
-                    v-else-if="step.status === 'current'"
-                    :href="step.href"
+                    v-if="step.id === modelValue"
                     class="flex items-center px-6 py-4 text-sm font-medium"
                     aria-current="step"
                 >
@@ -48,7 +26,11 @@
                         >{{ step.name }}</span
                     >
                 </a>
-                <a v-else :href="step.href" class="group flex items-center">
+                <a
+                    v-else
+                    @click.prevent="$emit('update:modelValue', step.id)"
+                    class="group flex items-center"
+                >
                     <span
                         class="flex items-center px-6 py-4 text-sm font-medium"
                     >
@@ -93,12 +75,13 @@
 </template>
 
 <script setup>
-    import { CheckIcon } from "@heroicons/vue/24/solid"
+    defineProps(["modelValue"])
+    defineEmits(["update:modelValue"])
 
     const steps = [
-        { id: "01", name: "Admission urgences", href: "#", status: "upcoming" },
-        { id: "02", name: "Accueil & Triage", href: "#", status: "current" },
-        { id: "03", name: "Examen médical", href: "#", status: "upcoming" },
-        { id: "04", name: "Sorties", href: "#", status: "upcoming" },
+        { id: 1, name: "Admission urgences" },
+        { id: 2, name: "Accueil & Triage" },
+        { id: 3, name: "Examen médical" },
+        { id: 4, name: "Sorties" },
     ]
 </script>

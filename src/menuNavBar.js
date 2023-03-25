@@ -1,10 +1,4 @@
-import {
-    mdiAccount,
-    mdiCogOutline,
-    mdiEmail,
-    mdiLogout,
-    mdiThemeLightDark,
-} from "@mdi/js"
+import { mdiAccount, mdiCogOutline, mdiEmail, mdiThemeLightDark } from "@mdi/js"
 
 export default [
     {
@@ -31,11 +25,6 @@ export default [
             },
             {
                 isDivider: true,
-            },
-            {
-                icon: mdiLogout,
-                label: "Déconnexion",
-                isLogout: true,
             },
         ],
     },

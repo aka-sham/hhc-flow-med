@@ -7,13 +7,18 @@
     import BaseIcon from "@/components/BaseIcon.vue"
     import { mdiTimerSandComplete } from "@mdi/js"
 
-    defineProps({
+    const props = defineProps({
         checkable: Boolean,
+        selectedStep: Number,
     })
 
     const mainStore = useMainStore()
 
-    const items = computed(() => mainStore.patients)
+    const items = computed(() =>
+        mainStore.patients.filter(
+            (patient) => patient.state === props.selectedStep
+        )
+    )
 
     const isModalActive = ref(false)
 
@@ -87,7 +92,7 @@
     <table>
         <thead>
             <tr>
-                <th v-if="checkable" />
+                <th v-if="props.checkable" />
                 <th>Indicateur</th>
                 <th>Temps d'attente</th>
             </tr>
@@ -95,7 +100,7 @@
         <tbody>
             <tr v-for="client in items" :key="client.id">
                 <TableCheckboxCell
-                    v-if="checkable"
+                    v-if="props.checkable"
                     @checked="checked($event, client)"
                 />
                 <td class="border-b-0 lg:w-6 before:hidden">

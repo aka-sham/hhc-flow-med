@@ -2,6 +2,7 @@
     "data": [
         {
             "id": 1,
+            "state": 4,
             "avatar": "https://avatars.dicebear.com/v2/gridy/Howell-Hand.svg",
             "name": "Lisandra Slater",
             "age": 96,
@@ -13,6 +14,7 @@
         },
         {
             "id": 2,
+            "state": 3,
             "avatar": "https://avatars.dicebear.com/v2/gridy/Hope-Howe.svg",
             "name": "Kathleen Welch",
             "age": 42,
@@ -24,6 +26,7 @@
         },
         {
             "id": 3,
+            "state": 2,
             "avatar": "https://avatars.dicebear.com/v2/gridy/Nelson-Jerde.svg",
             "name": "Whilemina Sims",
             "age": 72,
@@ -35,6 +38,7 @@
         },
         {
             "id": 4,
+            "state": 1,
             "avatar": "https://avatars.dicebear.com/v2/gridy/Kim-Weimann.svg",
             "name": "Cora Rivas",
             "age": 57,
@@ -46,6 +50,7 @@
         },
         {
             "id": 5,
+            "state": 1,
             "avatar": "https://avatars.dicebear.com/v2/gridy/Justice-OReilly.svg",
             "name": "Demetria Shepherd",
             "age": 35,
@@ -57,6 +62,7 @@
         },
         {
             "id": 6,
+            "state": 1,
             "avatar": "https://avatars.dicebear.com/v2/gridy/Adrienne-Mayer-III.svg",
             "name": "Rafael Jackson",
             "age": 49,
@@ -68,6 +74,7 @@
         },
         {
             "id": 7,
+            "state": 1,
             "avatar": "https://avatars.dicebear.com/v2/gridy/Mr.-Julien-Ebert.svg",
             "name": "Avye Lester",
             "age": 22,

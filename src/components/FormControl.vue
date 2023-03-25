@@ -2,6 +2,7 @@
     import { computed, ref, onMounted, onBeforeUnmount } from "vue"
     import { useMainStore } from "@/stores/main"
     import FormControlIcon from "@/components/FormControlIcon.vue"
+    import { MagnifyingGlassIcon } from "@heroicons/vue/20/solid"
 
     const props = defineProps({
         name: {
@@ -123,12 +124,17 @@
 
 <template>
     <div class="relative">
+        <MagnifyingGlassIcon
+            class="pointer-events-none absolute inset-y-0 left-0 h-full w-5 text-gray-400"
+            aria-hidden="true"
+        />
         <select
             v-if="computedType === 'select'"
             :id="id"
             v-model="computedValue"
             :name="name"
             :class="inputElClass"
+            class="pl-8"
         >
             <option
                 v-for="option in options"
@@ -146,6 +152,7 @@
             :name="name"
             :placeholder="placeholder"
             :required="required"
+            class="pl-8"
         />
         <input
             v-else
@@ -159,6 +166,7 @@
             :placeholder="placeholder"
             :type="computedType"
             :class="inputElClass"
+            class="pl-8"
         />
         <FormControlIcon v-if="icon" :icon="icon" :h="controlIconH" />
     </div>
