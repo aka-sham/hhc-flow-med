@@ -16,7 +16,7 @@
 
     const click = (slug) => {
         styleStore.setStyle(slug)
-        router.push("/dashboard")
+        router.push("/")
     }
 </script>
 

@@ -1,6 +1,6 @@
 <script setup>
     import { reactive, ref } from "vue"
-    import { mdiBallotOutline, mdiAccount, mdiMail, mdiGithub } from "@mdi/js"
+    import { mdiBallotOutline, mdiAccount, mdiMail } from "@mdi/js"
     import SectionMain from "@/components/SectionMain.vue"
     import CardBox from "@/components/CardBox.vue"
     import FormCheckRadioGroup from "@/components/FormCheckRadioGroup.vue"
@@ -62,15 +62,6 @@
                 title="Forms example"
                 main
             >
-                <BaseButton
-                    href="https://github.com/justboil/admin-one-vue-tailwind"
-                    target="_blank"
-                    :icon="mdiGithub"
-                    label="Star on GitHub"
-                    color="contrast"
-                    rounded-full
-                    small
-                />
             </SectionTitleLineWithButton>
             <CardBox form @submit.prevent="submit">
                 <FormField label="Grouped with icons">
