@@ -93,7 +93,8 @@
         <thead>
             <tr>
                 <th v-if="props.checkable" />
-                <th>Indicateur</th>
+                <th class="w-2"></th>
+                <th>Indicateurs</th>
                 <th>Temps d'attente</th>
             </tr>
         </thead>
@@ -103,8 +104,15 @@
                     v-if="props.checkable"
                     @checked="checked($event, client)"
                 />
+                <td class="border-b-0 w-2 before:hidden">#{{ client.id }}</td>
                 <td class="border-b-0 lg:w-6 before:hidden">
-                    <FlowPill :type="client.flow" :level="client.severity" />
+                    <div class="flex flex-row">
+                        <span class="block lg:hidden"></span
+                        ><FlowPill
+                            :type="client.flow"
+                            :level="client.severity"
+                        />
+                    </div>
                 </td>
 
                 <td class="lg:w-64 flex flex-col lg:table-cell">
