@@ -291,7 +291,14 @@
         <main class="lg:pl-72">
             <div class="xl:pr-96">
                 <div class="py-10 px-4 sm:px-6 lg:py-6 lg:px-8">
-                    <!-- Main area -->
+                    <responsive-line-chart :data="data" />
+                    <button
+                        @click="addData"
+                        type="button"
+                        class="rounded-md bg-indigo-600 py-1.5 px-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    >
+                        Ajouter des données
+                    </button>
                 </div>
             </div>
         </main>
@@ -323,6 +330,8 @@
         XMarkIcon,
     } from "@heroicons/vue/24/outline"
 
+    import ResponsiveLineChart from "@/components/ResponsiveLineChart.vue"
+
     const navigation = [
         { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
         { name: "Team", href: "#", icon: UsersIcon, current: false },
@@ -349,4 +358,10 @@
     ]
 
     const sidebarOpen = ref(false)
+
+    const data = ref([10, 40, 15, 25, 50])
+
+    const addData = () => {
+        data.value = [...data.value, Math.round(Math.random() * 50)]
+    }
 </script>
