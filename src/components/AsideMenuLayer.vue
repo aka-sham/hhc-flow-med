@@ -46,10 +46,12 @@
                 :class="styleStore.asideBrandStyle"
                 class="flex flex-row h-14 items-center justify-between dark:bg-slate-900"
             >
-                <div
-                    class="text-center flex-1 lg:text-left lg:pl-6 xl:text-center xl:pl-0"
-                >
-                    <b class="font-black">FlowMed</b>
+                <div class="text-center flex-1 lg:text-left lg:pl-6">
+                    <h1 class="font-logo text-4xl">
+                        Flow<span class="text-blue-500 dark:text-yellow-500"
+                            >Med</span
+                        >
+                    </h1>
                 </div>
                 <button
                     class="hidden lg:inline-block xl:hidden p-3"

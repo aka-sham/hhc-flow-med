@@ -1,0 +1,81 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "avatar": "https://avatars.dicebear.com/v2/gridy/Howell-Hand.svg",
+            "name": "Lisandra Slater",
+            "age": 96,
+            "severity": 5,
+            "flow": 2,
+            "progress": 90,
+            "waiting_time": 80,
+            "waiting_time_expected": 100
+        },
+        {
+            "id": 2,
+            "avatar": "https://avatars.dicebear.com/v2/gridy/Hope-Howe.svg",
+            "name": "Kathleen Welch",
+            "age": 42,
+            "severity": 4,
+            "flow": 2,
+            "progress": 83,
+            "waiting_time": 260,
+            "waiting_time_expected": 340
+        },
+        {
+            "id": 3,
+            "avatar": "https://avatars.dicebear.com/v2/gridy/Nelson-Jerde.svg",
+            "name": "Whilemina Sims",
+            "age": 72,
+            "severity": 1,
+            "flow": 3,
+            "progress": 84,
+            "waiting_time": 362,
+            "waiting_time_expected": 435
+        },
+        {
+            "id": 4,
+            "avatar": "https://avatars.dicebear.com/v2/gridy/Kim-Weimann.svg",
+            "name": "Cora Rivas",
+            "age": 57,
+            "severity": 2,
+            "flow": 4,
+            "progress": 79,
+            "waiting_time": 366,
+            "waiting_time_expected": 400
+        },
+        {
+            "id": 5,
+            "avatar": "https://avatars.dicebear.com/v2/gridy/Justice-OReilly.svg",
+            "name": "Demetria Shepherd",
+            "age": 35,
+            "severity": 1,
+            "flow": 1,
+            "progress": 76,
+            "waiting_time": 297,
+            "waiting_time_expected": 350
+        },
+        {
+            "id": 6,
+            "avatar": "https://avatars.dicebear.com/v2/gridy/Adrienne-Mayer-III.svg",
+            "name": "Rafael Jackson",
+            "age": 49,
+            "severity": 2,
+            "flow": 4,
+            "progress": 66,
+            "waiting_time": 30,
+            "waiting_time_expected": 60
+        },
+        {
+            "id": 7,
+            "avatar": "https://avatars.dicebear.com/v2/gridy/Mr.-Julien-Ebert.svg",
+            "name": "Avye Lester",
+            "age": 22,
+            "severity": 4,
+            "flow": 4,
+            "progress": 45,
+            "waiting_time": 103,
+            "waiting_time_expected": 250
+        }
+    ]
+}

@@ -1,6 +1,7 @@
 /* eslint-env node */
 
 const plugin = require("tailwindcss/plugin")
+const defaultTheme = require("tailwindcss/defaultTheme")
 
 module.exports = {
     content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
@@ -38,6 +39,9 @@ module.exports = {
             animation: {
                 "fade-out": "fade-out 250ms ease-in-out",
                 "fade-in": "fade-in 250ms ease-in-out",
+            },
+            fontFamily: {
+                logo: ["Roboto Condensed", ...defaultTheme.fontFamily.sans],
             },
         },
     },

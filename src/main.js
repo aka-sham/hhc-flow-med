@@ -21,6 +21,7 @@ const styleStore = useStyleStore(pinia)
 
 /* Fetch sample data */
 mainStore.fetch("clients")
+mainStore.fetch("patients")
 mainStore.fetch("history")
 
 /* App style */
@@ -36,7 +37,7 @@ if (
 }
 
 /* Default title tag */
-const defaultDocumentTitle = "Admin One Vue 3 Tailwind"
+const defaultDocumentTitle = "FlowMed - Fluidifiez la gestion des urgences !"
 
 /* Set document title from route meta */
 router.afterEach((to) => {

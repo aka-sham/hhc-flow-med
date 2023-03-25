@@ -18,7 +18,7 @@
                         class="flex items-center px-6 py-4 text-sm font-medium"
                     >
                         <span
-                            class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-indigo-600 group-hover:bg-indigo-800"
+                            class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 dark:bg-blue-500 group-hover:bg-blue-700 group-hover:dark:bg-blue-600"
                         >
                             <CheckIcon
                                 class="h-6 w-6 text-white"
@@ -37,13 +37,16 @@
                     aria-current="step"
                 >
                     <span
-                        class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 border-indigo-600"
+                        class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 border-blue-600 dark:border-blue-500"
                     >
-                        <span class="text-indigo-600">{{ step.id }}</span>
+                        <span class="text-blue-600 dark:text-blue-500">{{
+                            step.id
+                        }}</span>
                     </span>
-                    <span class="ml-4 text-sm font-medium text-indigo-600">{{
-                        step.name
-                    }}</span>
+                    <span
+                        class="ml-4 text-sm font-medium text-blue-600 dark:text-blue-500"
+                        >{{ step.name }}</span
+                    >
                 </a>
                 <a v-else :href="step.href" class="group flex items-center">
                     <span
@@ -93,7 +96,7 @@
     import { CheckIcon } from "@heroicons/vue/24/solid"
 
     const steps = [
-        { id: "01", name: "Admission urgences", href: "#", status: "current" },
+        { id: "01", name: "Admission urgences", href: "#", status: "upcoming" },
         { id: "02", name: "Accueil & Triage", href: "#", status: "current" },
         { id: "03", name: "Examen médical", href: "#", status: "upcoming" },
         { id: "04", name: "Sorties", href: "#", status: "upcoming" },

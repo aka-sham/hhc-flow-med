@@ -13,6 +13,7 @@ export const useMainStore = defineStore("main", {
 
         /* Sample data (commonly used) */
         clients: [],
+        patients: [],
         history: [],
     }),
     actions: {

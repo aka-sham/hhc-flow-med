@@ -1,5 +1,5 @@
 <script setup>
-    import { mdiAccountMultiple, mdiChartTimelineVariant } from "@mdi/js"
+    import { mdiAccountMultiple } from "@mdi/js"
     import SectionMain from "@/components/SectionMain.vue"
     import CardBox from "@/components/CardBox.vue"
     import TableSampleClients from "@/components/TableSampleClients.vue"
@@ -11,11 +11,7 @@
 <template>
     <LayoutAuthenticated>
         <SectionMain>
-            <SectionTitleLineWithButton
-                :icon="mdiChartTimelineVariant"
-                title="Vue globale"
-                main
-            >
+            <SectionTitleLineWithButton title="Vue globale" main>
             </SectionTitleLineWithButton>
 
             <PanelStep />

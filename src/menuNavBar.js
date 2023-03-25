@@ -8,6 +8,12 @@ import {
 
 export default [
     {
+        icon: mdiThemeLightDark,
+        label: "Light/Dark",
+        isDesktopNoLabel: true,
+        isToggleLightDark: true,
+    },
+    {
         isCurrentUser: true,
         menu: [
             {
@@ -32,17 +38,5 @@ export default [
                 isLogout: true,
             },
         ],
-    },
-    {
-        icon: mdiThemeLightDark,
-        label: "Light/Dark",
-        isDesktopNoLabel: true,
-        isToggleLightDark: true,
-    },
-    {
-        icon: mdiLogout,
-        label: "Déconnexion",
-        isDesktopNoLabel: true,
-        isLogout: true,
     },
 ]
