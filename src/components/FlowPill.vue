@@ -20,19 +20,19 @@
 
     const typeStyle = computed(() => {
         if (props.type === 1) {
-            return { icon: mdiTeddyBear }
+            return { icon: mdiTeddyBear, label: "Pédiatrique" }
         }
         if (props.type === 2) {
-            return { icon: mdiWheelchair }
+            return { icon: mdiWheelchair, label: "Patient en fauteuil" }
         }
         if (props.type === 3) {
-            return { icon: mdiHumanWhiteCane }
+            return { icon: mdiHumanWhiteCane, label: "Gériatique" }
         }
         if (props.type === 4) {
-            return { icon: mdiBed }
+            return { icon: mdiBed, label: "Patient sur brancard" }
         }
         if (props.type === 5) {
-            return { icon: mdiHeadSnowflake }
+            return { icon: mdiHeadSnowflake, label: "Psychologique" }
         }
 
         return { icon: mdiTeddyBear }
@@ -60,16 +60,18 @@
 </script>
 
 <template>
-    <span
-        class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full p-3 dark:border-white"
-        :class="levelStyle.color"
-    >
-        <BaseIcon
-            :path="typeStyle.icon"
-            w="30"
-            h="30"
-            size="30"
-            class="text-white"
-        />
-    </span>
+    <div class="flex flex-row items-center">
+        <span
+            class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full p-3 dark:border-white"
+        >
+            <BaseIcon
+                :path="typeStyle.icon"
+                w="30"
+                h="30"
+                size="30"
+                class="text-gray-700"
+            />
+        </span>
+        <div>{{ typeStyle.label }}</div>
+    </div>
 </template>

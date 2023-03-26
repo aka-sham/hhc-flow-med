@@ -12,17 +12,23 @@
                 <a
                     v-if="step.id === modelValue"
                     class="flex items-center px-6 py-4 text-sm font-medium"
+                    :class="{ 'animate-pulse': step.id === 3 }"
                     aria-current="step"
                 >
                     <span
-                        class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 border-blue-600 dark:border-blue-500"
+                        class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 border-blue-600 dark:border-blue-500 text-blue-600 dark:text-blue-500"
+                        :class="{
+                            'bg-red-50 text-red-700 border-red-700':
+                                step.id === 3,
+                        }"
                     >
-                        <span class="text-blue-600 dark:text-blue-500">{{
-                            step.id
-                        }}</span>
+                        <span class="text-current">{{ step.id }}</span>
                     </span>
                     <span
-                        class="ml-4 text-sm font-medium text-blue-600 dark:text-blue-500"
+                        class="ml-4 text-sm font-medium"
+                        :class="{
+                            ' text-red-700 ': step.id === 3,
+                        }"
                         >{{ step.name }}</span
                     >
                 </a>
@@ -30,20 +36,33 @@
                     v-else
                     @click.prevent="$emit('update:modelValue', step.id)"
                     class="group flex items-center"
+                    :class="{ 'animate-pulse': step.id === 3 }"
                 >
                     <span
                         class="flex items-center px-6 py-4 text-sm font-medium"
                     >
                         <span
                             class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 border-gray-300 group-hover:border-gray-400"
+                            :class="{
+                                'bg-red-50 text-red-700 border-red-700':
+                                    step.id === 3,
+                            }"
                         >
                             <span
                                 class="text-gray-500 group-hover:text-gray-900"
+                                :class="{
+                                    'bg-red-50 text-red-700 border-red-700 group-hover:bg-red-50 group-hover:text-red-700 group-hover:border-red-700':
+                                        step.id === 3,
+                                }"
                                 >{{ step.id }}</span
                             >
                         </span>
                         <span
                             class="ml-4 text-sm font-medium text-gray-500 group-hover:text-gray-900"
+                            :class="{
+                                ' text-red-700 group-hover:text-red-700':
+                                    step.id === 3,
+                            }"
                             >{{ step.name }}</span
                         >
                     </span>
@@ -81,7 +100,7 @@
     const steps = [
         { id: 1, name: "Admission urgences" },
         { id: 2, name: "Accueil & Triage" },
-        { id: 3, name: "Examen médical" },
+        { id: 3, name: "Zone de soins" },
         { id: 4, name: "Sorties" },
     ]
 </script>

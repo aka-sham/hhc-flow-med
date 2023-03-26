@@ -3,6 +3,7 @@
     import { useMainStore } from "@/stores/main"
     import CardBoxModal from "@/components/CardBoxModal.vue"
     import TableCheckboxCell from "@/components/TableCheckboxCell.vue"
+    import SeverityPill from "@/components/SeverityPill.vue"
     import FlowPill from "@/components/FlowPill.vue"
     import BaseIcon from "@/components/BaseIcon.vue"
     import { mdiTimerSandComplete } from "@mdi/js"
@@ -93,8 +94,9 @@
         <thead>
             <tr>
                 <th v-if="props.checkable" />
-                <th class="w-2"></th>
-                <th>Indicateurs</th>
+                <th class="w-2">N°</th>
+                <th>Gravité</th>
+                <th>Typologie</th>
                 <th>Temps d'attente</th>
             </tr>
         </thead>
@@ -105,6 +107,12 @@
                     @checked="checked($event, client)"
                 />
                 <td class="border-b-0 w-2 before:hidden">#{{ client.id }}</td>
+                <td class="border-b-0 lg:w-6 before:hidden">
+                    <div class="flex flex-row">
+                        <span class="block lg:hidden"></span
+                        ><SeverityPill :level="client.severity" />
+                    </div>
+                </td>
                 <td class="border-b-0 lg:w-6 before:hidden">
                     <div class="flex flex-row">
                         <span class="block lg:hidden"></span

@@ -38,7 +38,7 @@
         },
         {
             "id": 4,
-            "state": 1,
+            "state": 3,
             "avatar": "https://avatars.dicebear.com/v2/gridy/Kim-Weimann.svg",
             "name": "Cora Rivas",
             "age": 57,
@@ -50,7 +50,7 @@
         },
         {
             "id": 5,
-            "state": 1,
+            "state": 3,
             "avatar": "https://avatars.dicebear.com/v2/gridy/Justice-OReilly.svg",
             "name": "Demetria Shepherd",
             "age": 35,
@@ -62,7 +62,7 @@
         },
         {
             "id": 6,
-            "state": 1,
+            "state": 3,
             "avatar": "https://avatars.dicebear.com/v2/gridy/Adrienne-Mayer-III.svg",
             "name": "Rafael Jackson",
             "age": 49,
