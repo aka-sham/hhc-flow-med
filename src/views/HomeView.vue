@@ -223,43 +223,81 @@
                     </div>
                 </div>
             </div>
+            <PanelStep v-model="selectedStep" class="mt-20" />
 
-            <SectionTitleLineWithButton title="Vue globale">
-            </SectionTitleLineWithButton>
-
-            <PanelStep v-model="selectedStep" />
-
-            <SectionTitleLineWithButton
-                :icon="mdiAccountMultiple"
-                title="Patients"
-            />
-
-            <CardBox has-table v-if="selectedStep">
+            <CardBoxModal
+                v-model="selectedStep"
+                :title="modalTitle"
+                button-label="Ok"
+            >
+                <div v-if="selectedStep === 3">
+                    <div class="rounded-md bg-yellow-50 p-4">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <svg
+                                    class="h-8 w-8 text-yellow-400"
+                                    viewBox="0 0 20 20"
+                                    fill="currentColor"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z"
+                                        clip-rule="evenodd"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-lg font-medium text-yellow-800">
+                                    Les patient sont en attente d'un examen
+                                    biologique.
+                                </h3>
+                                <div class="mt-2 text-base text-yellow-700">
+                                    <ul class="list-disc">
+                                        <li>Appeler</li>
+                                        <li>Diffuser</li>
+                                        <li>Renforcer aide</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <TableSamplePatients :selected-step="selectedStep" />
-            </CardBox>
-
-            <CardBox v-else>
-                <CardBoxComponentEmpty />
-            </CardBox>
+            </CardBoxModal>
         </SectionMain>
     </LayoutAuthenticated>
 </template>
 
 <script setup>
-    import { ref } from "vue"
+    import { ref, computed } from "vue"
 
     import BaseIcon from "@/components/BaseIcon.vue"
 
-    import { mdiAccountMultiple } from "@mdi/js"
     import SectionMain from "@/components/SectionMain.vue"
-    import CardBox from "@/components/CardBox.vue"
+    import CardBoxModal from "@/components/CardBoxModal.vue"
     import TableSamplePatients from "@/components/TableSamplePatients.vue"
     import LayoutAuthenticated from "@/layouts/LayoutAuthenticated.vue"
-    import SectionTitleLineWithButton from "@/components/SectionTitleLineWithButton.vue"
     import PanelStep from "@/components/PanelStep.vue"
-    import CardBoxComponentEmpty from "@/components/CardBoxComponentEmpty.vue"
     import { mdiTimerSand } from "@mdi/js"
     import { mdiChartPieOutline } from "@mdi/js"
 
     const selectedStep = ref(null)
+
+    const modalTitle = computed(() => {
+        if (selectedStep.value === 1) {
+            return "Patients en Admission urgences"
+        }
+        if (selectedStep.value === 2) {
+            return "Patients en Accueil & Triage"
+        }
+        if (selectedStep.value === 3) {
+            return "Patients en Zone de soins"
+        }
+        if (selectedStep.value === 4) {
+            return "Patients en Sorties"
+        }
+
+        return "Patients"
+    })
 </script>

@@ -89,67 +89,70 @@
             {{ checkedRow.name }}
         </span>
     </div>
-
-    <table>
-        <thead>
-            <tr>
-                <th v-if="props.checkable" />
-                <th class="w-2">N°</th>
-                <th>Gravité</th>
-                <th>Typologie</th>
-                <th>Temps d'attente</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="client in items" :key="client.id">
-                <TableCheckboxCell
-                    v-if="props.checkable"
-                    @checked="checked($event, client)"
-                />
-                <td class="border-b-0 w-2 before:hidden">#{{ client.id }}</td>
-                <td class="border-b-0 lg:w-6 before:hidden">
-                    <div class="flex flex-row">
-                        <span class="block lg:hidden"></span
-                        ><SeverityPill :level="client.severity" />
-                    </div>
-                </td>
-                <td class="border-b-0 lg:w-6 before:hidden">
-                    <div class="flex flex-row">
-                        <span class="block lg:hidden"></span
-                        ><FlowPill
-                            :type="client.flow"
-                            :level="client.severity"
-                        />
-                    </div>
-                </td>
-
-                <td class="lg:w-64 flex flex-col lg:table-cell">
-                    <div class="w-full flex justify-between">
-                        <span
-                            >Temps d'attente :
-                            {{ displayTime(client.waiting_time) }}</span
-                        >
-                        <span class="text-gray-400 dark:text-slate-600 flex"
-                            ><BaseIcon
-                                :path="mdiTimerSandComplete"
-                                w="20"
-                                h="20"
-                                size="20"
+    <div class="overflow-scroll">
+        <table class="table-auto overflow-scroll">
+            <thead>
+                <tr>
+                    <th v-if="props.checkable" />
+                    <th class="w-2">N°</th>
+                    <th>Gravité</th>
+                    <th>Typologie</th>
+                    <th>Temps d'attente</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="client in items" :key="client.id">
+                    <TableCheckboxCell
+                        v-if="props.checkable"
+                        @checked="checked($event, client)"
+                    />
+                    <td class="border-b-0 w-2 before:hidden">
+                        #{{ client.id }}
+                    </td>
+                    <td class="border-b-0 lg:w-6 before:hidden">
+                        <div class="flex flex-row">
+                            <span class="block lg:hidden"></span
+                            ><SeverityPill :level="client.severity" />
+                        </div>
+                    </td>
+                    <td class="border-b-0 lg:w-6 before:hidden">
+                        <div class="flex flex-row">
+                            <span class="block lg:hidden"></span
+                            ><FlowPill
+                                :type="client.flow"
+                                :level="client.severity"
                             />
-                            {{
-                                displayTime(client.waiting_time_expected)
-                            }}</span
+                        </div>
+                    </td>
+
+                    <td class="lg:w-64 flex flex-col lg:table-cell">
+                        <div class="w-full flex justify-between">
+                            <span
+                                >Temps d'attente :
+                                {{ displayTime(client.waiting_time) }}</span
+                            >
+                            <span class="text-gray-400 dark:text-slate-600 flex"
+                                ><BaseIcon
+                                    :path="mdiTimerSandComplete"
+                                    w="20"
+                                    h="20"
+                                    size="20"
+                                />
+                                {{
+                                    displayTime(client.waiting_time_expected)
+                                }}</span
+                            >
+                        </div>
+                        <progress
+                            class="flex w-full self-center"
+                            max="100"
+                            :value="client.progress"
                         >
-                    </div>
-                    <progress
-                        class="flex w-full self-center"
-                        max="100"
-                        :value="client.progress"
-                    >
-                        {{ client.progress }}
-                    </progress>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                            {{ client.progress }}
+                        </progress>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </template>

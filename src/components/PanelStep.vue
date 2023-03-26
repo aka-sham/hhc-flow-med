@@ -2,7 +2,7 @@
     <nav aria-label="Progress">
         <ol
             role="list"
-            class="divide-y divide-gray-300 rounded-md border border-gray-300 md:flex md:divide-y-0"
+            class="divide-y divide-gray-600 rounded-md border-2 border-gray-400 md:flex md:divide-y-0 shadow-lg"
         >
             <li
                 v-for="(step, stepIdx) in steps"
@@ -42,14 +42,14 @@
                         class="flex items-center px-6 py-4 text-sm font-medium"
                     >
                         <span
-                            class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 border-gray-300 group-hover:border-gray-400"
+                            class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 border-gray-200 bg-white group-hover:border-gray-500"
                             :class="{
                                 'bg-red-50 text-red-700 border-red-700':
                                     step.id === 3,
                             }"
                         >
                             <span
-                                class="text-gray-500 group-hover:text-gray-900"
+                                class="text-gray-800 group-hover:text-gray-900"
                                 :class="{
                                     'bg-red-50 text-red-700 border-red-700 group-hover:bg-red-50 group-hover:text-red-700 group-hover:border-red-700':
                                         step.id === 3,
@@ -58,7 +58,7 @@
                             >
                         </span>
                         <span
-                            class="ml-4 text-sm font-medium text-gray-500 group-hover:text-gray-900"
+                            class="ml-4 text-sm font-medium text-gray-800 group-hover:text-gray-900"
                             :class="{
                                 ' text-red-700 group-hover:text-red-700':
                                     step.id === 3,

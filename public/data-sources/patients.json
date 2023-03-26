@@ -12,18 +12,7 @@
             "waiting_time": 80,
             "waiting_time_expected": 100
         },
-        {
-            "id": 2,
-            "state": 3,
-            "avatar": "https://avatars.dicebear.com/v2/gridy/Hope-Howe.svg",
-            "name": "Kathleen Welch",
-            "age": 42,
-            "severity": 4,
-            "flow": 2,
-            "progress": 83,
-            "waiting_time": 260,
-            "waiting_time_expected": 340
-        },
+
         {
             "id": 3,
             "state": 2,
@@ -42,7 +31,7 @@
             "avatar": "https://avatars.dicebear.com/v2/gridy/Kim-Weimann.svg",
             "name": "Cora Rivas",
             "age": 57,
-            "severity": 2,
+            "severity": 1,
             "flow": 4,
             "progress": 79,
             "waiting_time": 366,
@@ -54,7 +43,7 @@
             "avatar": "https://avatars.dicebear.com/v2/gridy/Justice-OReilly.svg",
             "name": "Demetria Shepherd",
             "age": 35,
-            "severity": 1,
+            "severity": 2,
             "flow": 1,
             "progress": 76,
             "waiting_time": 297,
@@ -68,7 +57,7 @@
             "age": 49,
             "severity": 2,
             "flow": 4,
-            "progress": 66,
+            "progress": 71,
             "waiting_time": 30,
             "waiting_time_expected": 60
         },
@@ -83,6 +72,42 @@
             "progress": 45,
             "waiting_time": 103,
             "waiting_time_expected": 250
+        },
+        {
+            "id": 83,
+            "state": 3,
+            "avatar": "https://avatars.dicebear.com/v2/gridy/Kim-Weimann.svg",
+            "name": "Cora Rivas",
+            "age": 57,
+            "severity": 2,
+            "flow": 4,
+            "progress": 69,
+            "waiting_time": 366,
+            "waiting_time_expected": 400
+        },
+        {
+            "id": 90,
+            "state": 3,
+            "avatar": "https://avatars.dicebear.com/v2/gridy/Kim-Weimann.svg",
+            "name": "Cora Rivas",
+            "age": 57,
+            "severity": 3,
+            "flow": 4,
+            "progress": 54,
+            "waiting_time": 366,
+            "waiting_time_expected": 400
+        },
+        {
+            "id": 223,
+            "state": 3,
+            "avatar": "https://avatars.dicebear.com/v2/gridy/Hope-Howe.svg",
+            "name": "Kathleen Welch",
+            "age": 42,
+            "severity": 4,
+            "flow": 2,
+            "progress": 23,
+            "waiting_time": 260,
+            "waiting_time_expected": 440
         }
     ]
 }
